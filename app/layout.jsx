@@ -1,5 +1,6 @@
 import './globals.css';
 import Nav from '@/components/Nav';
+import RefreshButton from '@/components/RefreshButton';
 
 export const metadata = {
   title: '沖繩家族旅行',
@@ -18,7 +19,7 @@ export default function RootLayout({ children }) {
       <body>
         <header className="top">
           <div className="wrap">
-            <div className="brand"><span className="mark" aria-hidden="true" />沖繩家族旅行<small>2027.02.08–13</small></div>
+            <div className="brand"><span className="mark" aria-hidden="true" />沖繩家族旅行<small>2027.02.08–13</small><RefreshButton /></div>
             <Nav />
           </div>
         </header>
