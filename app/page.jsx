@@ -3,7 +3,7 @@ import { getTrip, getRows } from '@/lib/supabase';
 import { fmtMD, parseDate, daysBetween, todayTaipei } from '@/lib/format';
 import { Section, Empty } from '@/components/Badge';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 30;
 
 export default async function Home() {
   const trip = await getTrip();
@@ -21,23 +21,25 @@ export default async function Home() {
   const focus = focusDate ? items.filter((i) => i.day_date === focusDate && i.plan === 'main') : [];
 
   let heroCount;
-  if (toStart > 0) heroCount = <>還有 <span>{toStart}</span><small>天出發</small></>;
-  else if (toEnd >= 0) heroCount = <>旅行進行中 · 第 <span>{-toStart + 1}</span><small>天</small></>;
-  else heroCount = <>旅程已結束，歡迎回來</>;
+  if (toStart > 0) heroCount = <><small>還有</small><span>{toStart}</span><small>天</small></>;
+  else if (toEnd >= 0) heroCount = <><small>第</small><span>{-toStart + 1}</span><small>天</small></>;
+  else heroCount = <small>歡迎回來</small>;
 
   return (
     <>
       <div className="hero">
-        <div>{trip.subtitle}</div>
-        <h1>{trip.title}</h1>
-        <div>{fmtMD(trip.start_date)} – {fmtMD(trip.end_date)}</div>
-        <div className="count">{heroCount}</div>
+        <div className="hero-text">
+          <div className="sub-on">{trip.subtitle}</div>
+          <h1>{trip.title}</h1>
+          <div className="sub-on">{fmtMD(trip.start_date)} – {fmtMD(trip.end_date)}</div>
+        </div>
+        <div className="seal" aria-label="倒數">{heroCount}</div>
       </div>
 
       <div className="grid">
-        <div className="stat"><b>{people} 人</b><span>兩台車同行</span></div>
+        <div className="stat"><b>{people} 人</b><span>A 車 4 人、B 車第 2 天加入</span></div>
         <div className="stat"><b>{trip.elders} 位長輩</b><span>移動方便優先</span></div>
-        <div className="stat"><b>{nights + 1} 天 {nights} 晚</b><span>自由行</span></div>
+        <div className="stat"><b>{nights + 1} 天 {nights} 晚</b><span>自駕自由行</span></div>
         <div className="stat"><b>≤ NT${trip.budget_per_person?.toLocaleString('en-US')}</b><span>每人預算上限</span></div>
       </div>
 

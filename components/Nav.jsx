@@ -1,28 +1,33 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 const TABS = [
   ['/', '總覽'],
   ['/itinerary', '行程'],
   ['/spots', '景點'],
   ['/food', '美食'],
-  ['/shopping', '購物與退稅'],
+  ['/shopping', '購物退稅'],
   ['/transport', '交通'],
   ['/lodging', '住宿'],
   ['/budget', '費用'],
   ['/checklist', '清單'],
-  ['/info', '實用資訊'],
+  ['/info', '資訊'],
 ];
 
 export default function Nav() {
   const path = usePathname();
+  const [next, setNext] = useState(null);
+  useEffect(() => setNext(null), [path]);
+  const cur = next ?? path;
   return (
     <nav className="nav" aria-label="主選單">
       {TABS.map(([href, label]) => {
-        const active = href === '/' ? path === '/' : path.startsWith(href);
+        const active = href === '/' ? cur === '/' : cur.startsWith(href);
         return (
-          <Link key={href} href={href} className={active ? 'tab active' : 'tab'}>
+          <Link key={href} href={href} prefetch className={active ? 'tab active' : 'tab'}
+            aria-current={active ? 'page' : undefined} onClick={() => setNext(href)}>
             {label}
           </Link>
         );

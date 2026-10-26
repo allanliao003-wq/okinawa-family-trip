@@ -4,7 +4,7 @@ import { fmtMD, todayTaipei } from '@/lib/format';
 import { gmapsRoute, gmapsSearch, spotPath } from '@/lib/maps';
 import { Badge, Empty } from '@/components/Badge';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 30;
 export const metadata = { title: '行程｜沖繩家族旅行' };
 
 function Item({ i, sp }) {

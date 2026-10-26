@@ -2,7 +2,7 @@ import { getRows } from '@/lib/supabase';
 import { Badge, Section, Empty } from '@/components/Badge';
 import SpotCard from '@/components/SpotCard';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 30;
 export const metadata = { title: '購物與退稅｜沖繩家族旅行' };
 
 const COUPON_TONE = { 已查證: 'ok', 網路分享待確認: 'coral', 待查: 'muted' };

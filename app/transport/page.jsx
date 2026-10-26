@@ -2,7 +2,7 @@ import { getRows } from '@/lib/supabase';
 import { fmtDateTime, money } from '@/lib/format';
 import { Badge, Empty } from '@/components/Badge';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 30;
 export const metadata = { title: '交通｜沖繩家族旅行' };
 
 export default async function Transport() {

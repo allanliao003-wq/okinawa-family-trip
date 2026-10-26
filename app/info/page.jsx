@@ -1,7 +1,7 @@
 import { getRows } from '@/lib/supabase';
 import { Section, Empty } from '@/components/Badge';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 30;
 export const metadata = { title: '實用資訊｜沖繩家族旅行' };
 
 export default async function Info() {

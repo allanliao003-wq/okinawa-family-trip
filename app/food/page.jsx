@@ -2,7 +2,7 @@ import { getRows } from '@/lib/supabase';
 import { Empty } from '@/components/Badge';
 import SpotCard from '@/components/SpotCard';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 30;
 export const metadata = { title: '美食｜沖繩家族旅行' };
 
 export default async function Food() {

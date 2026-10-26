@@ -1,7 +1,7 @@
 import { getTrip, getRows } from '@/lib/supabase';
 import { money } from '@/lib/format';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 30;
 export const metadata = { title: '費用｜沖繩家族旅行' };
 
 export default async function Budget() {
