@@ -31,6 +31,7 @@ export default function SpotCard({ s }) {
       </div>
 
       {s.description && <p>{s.description}</p>}
+      {s.history && <p className="hist"><b>歷史背景　</b>{s.history}</p>}
 
       <Line label="營業">{s.opening_hours}</Line>
       <Line label="公休">{s.closed_days}</Line>

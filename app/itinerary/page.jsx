@@ -18,6 +18,8 @@ function Item({ i, sp }) {
         <Badge tone="muted">{i.category}</Badge>
         {i.optional && <Badge tone="sea">彈性</Badge>}
         {i.duration_min && <Badge>約 {i.duration_min} 分</Badge>}
+        {sp?.elder_friendly === false && <Badge tone="coral">長輩較吃力</Badge>}
+        {sp?.stroller_friendly === false && <Badge tone="coral">推車不便</Badge>}
       </div>
       {i.description && <div className="sub">{i.description}</div>}
       {i.car_note && <div className="sub">🚗 {i.car_note}</div>}

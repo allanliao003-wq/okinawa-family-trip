@@ -5,7 +5,7 @@ export const revalidate = 30;
 export const metadata = { title: '實用資訊｜沖繩家族旅行' };
 
 export default async function Info() {
-  const rows = await getRows('info_notes');
+  const rows = (await getRows('info_notes')).filter((r) => r.section !== '琉球歷史入門');
   const sections = [...new Set(rows.map((r) => r.section))];
   return (
     <>
