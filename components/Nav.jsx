@@ -6,6 +6,8 @@ const TABS = [
   ['/', '總覽'],
   ['/itinerary', '行程'],
   ['/spots', '景點'],
+  ['/food', '美食'],
+  ['/shopping', '購物與退稅'],
   ['/transport', '交通'],
   ['/lodging', '住宿'],
   ['/budget', '費用'],

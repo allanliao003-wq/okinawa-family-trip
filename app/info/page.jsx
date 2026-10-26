@@ -10,7 +10,7 @@ export default async function Info() {
   return (
     <>
       <h1>實用資訊</h1>
-      <p className="lead">緊急聯絡、租車與出發前提醒</p>
+      <p className="lead">自駕須知、人文禮儀、行程提醒、緊急聯絡與日文常用句。退稅與優惠券在「購物與退稅」分頁。</p>
       {rows.length === 0 && <Empty>還沒有資料</Empty>}
       {sections.map((s) => (
         <Section key={s} title={s}>
@@ -18,6 +18,7 @@ export default async function Info() {
             <article className="card" key={r.id}>
               <h3>{r.title}</h3>
               {r.content && <p style={{ whiteSpace: 'pre-wrap' }}>{r.content}</p>}
+              {r.source_url && <div className="links"><a href={r.source_url} target="_blank" rel="noreferrer">資料來源</a></div>}
             </article>
           ))}
         </Section>

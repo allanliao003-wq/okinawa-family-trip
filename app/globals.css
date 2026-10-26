@@ -72,3 +72,21 @@ tfoot td { font-weight: 700; background: var(--sea-soft); }
 .done-text { color: var(--muted); text-decoration: line-through; }
 a { color: var(--sea); }
 .foot { color: var(--muted); font-size: 13px; padding-bottom: 28px; text-align: center; }
+
+/* v2 additions */
+.badges { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px 0; }
+.line { display: flex; gap: 10px; margin: 6px 0 0; font-size: 15px; }
+.line .k { flex: none; width: 2.6em; color: var(--muted); font-size: 13px; padding-top: 2px; }
+.tip { background: var(--sea-soft); border-radius: 10px; padding: 8px 12px; font-size: 14px; }
+.warn { background: var(--coral-soft); color: var(--ink); border-radius: 10px; padding: 8px 12px; font-size: 14px; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 2px; }
+.links a { font-size: 14px; padding: 4px 12px; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; background: var(--card); }
+.small { font-size: 12px; margin-top: 6px; }
+.daytitle { font-weight: 700; font-size: 17px; margin-bottom: 4px; }
+.day { scroll-margin-top: 110px; }
+.backup { margin: 8px 0 18px; background: var(--card); border: 1px dashed var(--line); border-radius: 14px; padding: 10px 14px; }
+.backup summary { cursor: pointer; font-weight: 600; color: var(--coral); }
+.daylist { display: grid; gap: 10px; }
+.daylist a { text-decoration: none; color: inherit; }
+.daylist .card { margin: 0; }
+.daylist .n { color: var(--sea); font-weight: 700; margin-right: 8px; }

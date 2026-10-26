@@ -10,7 +10,7 @@ export default async function Lodging() {
   return (
     <>
       <h1>住宿</h1>
-      <p className="lead">共 5 晚，2/8 入住、2/13 退房</p>
+      <p className="lead">共 5 晚，2/8 入住、2/13 退房。目前規劃：那霸 2 晚、北部 1 晚、那霸 2 晚</p>
       {rows.length === 0 ? <Empty>還沒有住宿資料，確定後會更新</Empty> : rows.map((l) => (
         <article className="card" key={l.id}>
           <h3>{l.name}</h3>
@@ -21,7 +21,7 @@ export default async function Lodging() {
           {l.price_total != null && <p className="sub">總價：{money(l.price_total)}</p>}
           {l.booking_ref && <p className="sub">訂房編號：{l.booking_ref}</p>}
           {l.notes && <p className="sub">{l.notes}</p>}
-          {l.map_url && <p><a href={l.map_url} target="_blank" rel="noreferrer">在地圖開啟</a></p>}
+          {l.map_url && <div className="links"><a href={l.map_url} target="_blank" rel="noreferrer">📍 在 Google 地圖找飯店</a></div>}
         </article>
       ))}
     </>
