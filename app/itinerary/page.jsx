@@ -23,6 +23,7 @@ function Item({ i, sp }) {
       </div>
       {i.description && <div className="sub">{i.description}</div>}
       {i.car_note && <div className="sub">🚗 {i.car_note}</div>}
+      {i.elder_plan && <div className="elder"><b>長輩怎麼辦　</b>{i.elder_plan}</div>}
       <div className="links">
         {i.map_query && <a href={gmapsSearch(i.map_query)} target="_blank" rel="noreferrer">📍 導航</a>}
         {sp && <Link href={`${spotPath(sp.category)}#${sp.id}`}>詳細資訊</Link>}
@@ -60,6 +61,7 @@ export default async function Itinerary() {
               <span className="sub">{fmtMD(date)}{date === today ? ' · 今天' : ''}</span>
             </div>
             <div className="daytitle">{d.title}</div>
+            {d.elder_note && <div className="elder day-elder"><b>這天長輩　</b>{d.elder_note}</div>}
             {d.summary && <p className="sub">{d.summary}</p>}
             {d.drive_note && <p className="sub">🚗 {d.drive_note}</p>}
             {d.hotel_note && <p className="sub">🏨 住宿：{d.hotel_note}</p>}

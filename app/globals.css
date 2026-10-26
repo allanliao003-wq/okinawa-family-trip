@@ -140,3 +140,8 @@ tfoot td { font-weight: 700; background: var(--sea-soft); }
 .era { margin-bottom: 20px; }
 .era-title { font: 700 17px var(--serif); color: var(--indigo-2); margin: 18px 0 8px; padding-left: 10px; border-left: 4px solid var(--lacquer); }
 .card h3 a { color: inherit; text-decoration: none; }
+
+/* elder plan */
+.elder { background: var(--lacquer-soft); border-left: 3px solid var(--lacquer); border-radius: 4px; padding: 9px 13px; margin-top: 8px; font-size: 15.5px; line-height: 1.7; }
+.elder b { color: var(--lacquer); }
+.day-elder { margin: 10px 0 12px; }
