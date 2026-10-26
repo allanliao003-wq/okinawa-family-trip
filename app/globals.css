@@ -145,3 +145,5 @@ tfoot td { font-weight: 700; background: var(--sea-soft); }
 .elder { background: var(--lacquer-soft); border-left: 3px solid var(--lacquer); border-radius: 4px; padding: 9px 13px; margin-top: 8px; font-size: 15.5px; line-height: 1.7; }
 .elder b { color: var(--lacquer); }
 .day-elder { margin: 10px 0 12px; }
+
+.links a.reserve { background: var(--lacquer); color: #fff; padding: 4px 12px; border-radius: 4px; font-weight: 700; text-decoration: none; }

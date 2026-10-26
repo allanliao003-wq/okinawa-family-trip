@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { getTrip, getRows } from '@/lib/supabase';
 import { fmtMD, todayTaipei } from '@/lib/format';
-import { gmapsRoute, gmapsSearch, spotPath } from '@/lib/maps';
+import { gmapsRoute, gmapsSearch, spotPath, reserveLabel } from '@/lib/maps';
 import { Badge, Empty } from '@/components/Badge';
 
 export const revalidate = 30;
@@ -25,6 +25,7 @@ function Item({ i, sp }) {
       {i.car_note && <div className="sub">🚗 {i.car_note}</div>}
       {i.elder_plan && <div className="elder"><b>長輩怎麼辦　</b>{i.elder_plan}</div>}
       <div className="links">
+        {sp?.reserve_url && <a className="reserve" href={sp.reserve_url} rel="noreferrer">{reserveLabel(sp.reserve_url)}</a>}
         {i.map_query && <a href={gmapsSearch(i.map_query)} target="_blank" rel="noreferrer">📍 導航</a>}
         {sp && <Link href={`${spotPath(sp.category)}#${sp.id}`}>詳細資訊</Link>}
       </div>

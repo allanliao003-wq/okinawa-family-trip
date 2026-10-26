@@ -1,5 +1,5 @@
 import { Badge } from '@/components/Badge';
-import { gmapsSearch, photoSearch } from '@/lib/maps';
+import { gmapsSearch, photoSearch, reserveLabel } from '@/lib/maps';
 
 const TONE = { 確定: 'ok', 候選: 'coral', 已排除: 'muted' };
 
@@ -50,6 +50,7 @@ export default function SpotCard({ s }) {
       {s.verify_note && <p className="warn">⚠️ 待確認：{s.verify_note}</p>}
 
       <div className="links">
+        {s.reserve_url && <a className="reserve" href={s.reserve_url} rel="noreferrer">{reserveLabel(s.reserve_url)}</a>}
         <a href={gmapsSearch(q)} target="_blank" rel="noreferrer">📍 Google 地圖</a>
         <a href={photoSearch(q)} target="_blank" rel="noreferrer">🖼 看照片</a>
         {s.website && <a href={s.website} target="_blank" rel="noreferrer">官網</a>}
