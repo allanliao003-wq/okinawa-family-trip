@@ -40,7 +40,6 @@ export default async function Home() {
         <div className="stat"><b>{people} 人</b><span>A 車 4 人、B 車第 2 天加入</span></div>
         <div className="stat"><b>{trip.elders} 位長輩</b><span>移動方便優先</span></div>
         <div className="stat"><b>{nights + 1} 天 {nights} 晚</b><span>自駕自由行</span></div>
-        <div className="stat"><b>≤ NT${trip.budget_per_person?.toLocaleString('en-US')}</b><span>每人預算上限</span></div>
       </div>
 
       {trip.headline_notes && (

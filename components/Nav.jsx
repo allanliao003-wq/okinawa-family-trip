@@ -11,7 +11,6 @@ const TABS = [
   ['/shopping', '購物退稅'],
   ['/transport', '交通'],
   ['/lodging', '住宿'],
-  ['/budget', '費用'],
   ['/checklist', '清單'],
   ['/info', '資訊'],
 ];
